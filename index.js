@@ -1,4 +1,5 @@
 import {number} from "@inquirer/prompts"
+import chalk from "chalk"
 
 console.log("Boas vindas ao jogo de adivinhação!")
 
@@ -10,20 +11,20 @@ while (numeroTentativas > 0) {
         let palpite = await number({message:"Digite um número de 0 a 100"})
 
         if (palpite === numeroAleatorio) {
-            console.log(`Parabéns, voce acertou! com ${numeroTentativas} chances restantes`)
+            console.log(chalk.green(`Parabéns, voce acertou! com ${numeroTentativas} chances restantes`))
             numeroTentativas = 0
             break
         } else if (palpite > numeroAleatorio) {
-            console.log("Muito alto, tente um número menor")
+            console.log(chalk.redBright("Muito alto, tente um número menor"))
             numeroTentativas--
         } else if (palpite < numeroAleatorio) {
-            console.log("Muito baixo, tente um número maior")
+            console.log(chalk.redBright("Muito baixo, tente um número maior"))
             numeroTentativas--
         } else {
             console.log("Entrada não é um número válido")
         }
         if (numeroTentativas === 0) {
-                console.log(`Tentativas acabaram, o número era ${numeroAleatorio}`)
+                console.log(chalk.red(`Tentativas acabaram, o número era ${numeroAleatorio}`))
                 break
             }
     }catch (error){
