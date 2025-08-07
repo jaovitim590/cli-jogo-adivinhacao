@@ -1,17 +1,25 @@
 {
-  "type": "module",
   "dependencies": {
     "@inquirer/prompts": "^7.8.0",
-    "chalk": "^5.4.1"
+    "chalk": "^5.5.0"
   },
+  "type": "module",
   "name": "cli-jogo-adivinhacao",
-  "description": "",
+  "description": "Jogo de adivinhação de números ## MVP ![jogo](./prints/jogo.png \"Jogo\")",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "echo 'iniciando...'",
+    "start": "node index",
+    "poststart": "echo 'programa concluido'",
+    "dev": "echo 'dev'"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "node",
+    "cli",
+    "api"
+  ],
+  "author": "Mateus Gesualdo",
   "license": "ISC"
 }
